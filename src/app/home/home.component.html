@@ -1,0 +1,26 @@
+<div id="game">
+    <div id="title">
+        <h1>CHARADA</h1>
+        <h5>Guilherme Kilian, Rafael Dias</h5>
+    </div>
+    <div>
+        <div id="score">
+            <div *ngFor="let row of score">
+                <div id="itens">
+                    <div id="values" *ngFor="let button of row" [ngClass]="button.status">
+                        {{button.value}}
+                    </div>
+                </div>        
+            </div>
+        </div> 
+    </div>    
+    <div id="board">
+        <div id="row" *ngFor="let row of board">            
+            <button (click)="addLetter(key.value)" *ngFor="let key of row"  [ngClass]="key.status" >{{key.value}}</button>
+        </div>
+    </div>
+</div>
+
+<div class="options">
+    <button (click)="resetGame()">Reiniciar</button>
+</div>
